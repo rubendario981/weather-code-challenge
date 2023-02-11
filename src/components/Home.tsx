@@ -1,19 +1,25 @@
 import { ChangeEvent, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import CardCity from './CardCity';
 
-import Carousel from './Carousel';
 const Home = () => {
-    const [city, setCity] = useState<string>("");
-		const navigate = useNavigate();
+  const [city, setCity] = useState<string>("");
+  const navigate = useNavigate();
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setCity(e.currentTarget.value);
-    }
-  
-    const searchCity = () => {
-			navigate("/results/" + city)			
-    }
-  
+  const examplesCities = [
+    { name: "Miami" },
+    { name: "Madrid" },
+    { name: "Paris" },
+  ]
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setCity(e.currentTarget.value);
+  }
+
+  const searchCity = () => {
+    navigate("/results/" + city)
+  }
+
   return (
     <div className='flex flex-col items-center'>
       <div className='w-full'>
@@ -35,13 +41,11 @@ const Home = () => {
         <button onClick={searchCity} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl w-full px-5 py-2.5 focus:outline-none">Search</button>
       </div>
 
-      <div className='flex justify-between gap-8'>
-				<img src="https://images.vexels.com/media/users/3/240759/isolated/lists/6c36107196ebe4963480e32409d298f8-shining-sun-and-clouds.png" className="w-24" alt="sun and clouds" />
-				<img src="https://images.vexels.com/media/users/3/240759/isolated/lists/6c36107196ebe4963480e32409d298f8-shining-sun-and-clouds.png" className="w-24" alt="sun and clouds" />
-				<img src="https://images.vexels.com/media/users/3/240759/isolated/lists/6c36107196ebe4963480e32409d298f8-shining-sun-and-clouds.png" className="w-24" alt="sun and clouds" />
-
+      <div className='flex justify-between gap-8 mt-8'>
+        {examplesCities.map((city, i)=> <CardCity key={i} city={city.name} /> )}
+        <CardCity city={"cali"} />        
       </div>
-      
+
     </div >
   )
 }

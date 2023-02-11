@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
-import IGeneral from "../assets/interfaces/IWeatherData";
+import IGeneral from "../interfaces/IWeatherData";
 import Header from "./Header";
 import gps from "../assets/gpsicon.png";
 import Swal from "sweetalert2";
@@ -43,7 +43,7 @@ const ShowResults = () => {
 			}
 			fetchData(city);
 		}
-	}, [])
+	}, [city])
 
 	return (
 		<div className="flex flex-wrap">
