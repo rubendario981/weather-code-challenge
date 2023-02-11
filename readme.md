@@ -34,7 +34,7 @@
 
 &nbsp;
 ## Use description 
-### The app is very easy to use. Simply type the name of the city you want to search for in the search field or select it on the map to see the current and forecast weather information. You can switch between Celsius and Fahrenheit at the bottom of the screen.
+### The app is very easy to use. Simply type the name of the city you want to search for in the search field or select it on the map to see the current and forecast weather information. You can switch between Celsius and Fahrenheit.
 
 &nbsp;
 ## Homepage
