@@ -30,7 +30,7 @@ const CardCity = ({ city }: any) => {
 	const viewDetails = () => navigate("/results/" + city)
 	return (
 		<div onClick={viewDetails}
-			className="mx-auto text-white flex flex-col bg-indigo-600 bg-opacity-50 border border-blue-500 shadow-xl rounded-md w-48 md:w-56 hover:bg-indigo-400 hover:bg-opacity-75 hover:cursor-pointer">
+			className="mx-auto text-white flex flex-col bg-indigo-600 bg-opacity-50 border border-blue-500 shadow-xl rounded-md w-44 md:w-56 hover:bg-indigo-400 hover:bg-opacity-75 hover:cursor-pointer">
 			<p className="items-center bg-blue-500 px-4 py-2 md:py-3 text-lg text-center font-semibold rounded-t-lg"> {selectedCity?.name} - {selectedCity?.sys.country}</p>
 			<div className="flex gap-2 items-center">
 				<div className="w-1/2">

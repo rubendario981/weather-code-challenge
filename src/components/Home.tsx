@@ -42,7 +42,7 @@ const Home = () => {
         <button onClick={searchCity} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl w-full px-5 py-2.5 focus:outline-none">Search</button>
       </div>
 
-      <div className='flex flex-wrap justify-between gap-3 md:gap-6 my-8'>
+      <div className='flex flex-wrap justify-between gap-2 md:gap-6 my-8'>
         {examplesCities.map((city, i)=> <CardCity key={i} city={city.name} /> )}
       </div>
 
