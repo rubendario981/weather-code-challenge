@@ -27,27 +27,27 @@ const CardCity = ({ city }: any) => {
 		fetchData(city);
 	}, [])
 
-	const viewDetails =()=> navigate("/results/" + city)
+	const viewDetails = () => navigate("/results/" + city)
 	return (
 		<div onClick={viewDetails}
-		className="mx-auto text-white flex flex-col bg-indigo-600 bg-opacity-50 border border-blue-500 shadow-xl rounded-md w-56 hover:bg-indigo-400 hover:bg-opacity-75 hover:cursor-pointer">
-			<p className="items-center bg-blue-500 px-4 py-3 text-lg text-center font-semibold rounded-t-lg"> {selectedCity?.name} - {selectedCity?.sys.country}</p>
+			className="mx-auto text-white flex flex-col bg-indigo-600 bg-opacity-50 border border-blue-500 shadow-xl rounded-md w-48 md:w-56 hover:bg-indigo-400 hover:bg-opacity-75 hover:cursor-pointer">
+			<p className="items-center bg-blue-500 px-4 py-2 md:py-3 text-lg text-center font-semibold rounded-t-lg"> {selectedCity?.name} - {selectedCity?.sys.country}</p>
 			<div className="flex gap-2 items-center">
 				<div className="w-1/2">
 					<img
 						src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
 						className="mx-auto w-16"
 						alt="Icon forecast" />
-					<p className="first-letter:capitalize text-center text-md">{description}</p>
+					<p className="first-letter:capitalize text-center text-sm md:text-lg">{description}</p>
 				</div>
-				<div className="w-1/2 text-center">
-					<p className="text-4xl">{(Number(selectedCity?.main.temp) - 273.15).toFixed()}°C </p>
-					<p className="text-md mt-3">Real feel {(Number(selectedCity?.main.feels_like) - 273.15).toFixed()}°C </p>
+				<div className="w-1/2 text-center mt-3.5">
+					<p className="text-3xl md:text-4xl">{(Number(selectedCity?.main.temp) - 273.15).toFixed()}°C </p>
+					<p className="text-sm md:text-lg mt-3">Real feel {(Number(selectedCity?.main.feels_like) - 273.15).toFixed()}°C </p>
 				</div>
 			</div>
 			<div className="flex flex-col my-3 gap-2">
-				<p className="text-center text-sm">Min. temperature: {(Number(selectedCity?.main.temp_min) - 273.15).toFixed()}°C  </p>
-				<p className="text-center text-sm">Max. temperature: {(Number(selectedCity?.main.temp_max) - 273.15).toFixed()}°C </p>
+				<p className="text-center text-xs md:text-sm">Min. temperature: {(Number(selectedCity?.main.temp_min) - 273.15).toFixed()}°C  </p>
+				<p className="text-center text-xs md:text-sm">Max. temperature: {(Number(selectedCity?.main.temp_max) - 273.15).toFixed()}°C </p>
 			</div>
 		</div>
 	)

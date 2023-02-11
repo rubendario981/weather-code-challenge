@@ -51,10 +51,10 @@ const ShowResults = () => {
 				<Header />
 			</div>
 			<div className="w-full mt-6">
-				<h3 className="text-white text-6xl text-center">Current weather in {selectedCity?.name}</h3>
+				<h3 className="text-white text-3xl md:text-6xl text-center">Current weather in {selectedCity?.name}</h3>
 			</div>
-			<div className="mt-6 mx-auto text-white flex gap-6 bg-indigo-600 bg-opacity-50 border border-blue-500 py-6 px-4 shadow-2xl rounded-2xl">
-				<div className="text-center pr-8 border-r-2 ">
+			<div className="flex flex-col md:flex-row gap-6 mt-6 mb-20 mx-auto w-10/12 sm:w-7/12 md:w-9/12 lg:w-8/12 xl:w-7/12 justify-around text-white  bg-indigo-600 bg-opacity-50 border border-blue-500 py-6 px-4 shadow-2xl rounded-2xl">
+				<div className="text-center pr-8 border-b-2 md:border-b-0 md:border-r-2 ">
 					<div className="inline-flex items-center bg-blue-500 text-white px-4 rounded-lg"> <img src={gps} className="w-6 mr-3" alt="gps icon" /> {selectedCity?.name} - {selectedCity?.sys.country}</div>
 					<p className="font-semibold">Local time in {city}</p>
 					<p className="text-sm">{localTime}</p>
@@ -64,7 +64,7 @@ const ShowResults = () => {
 						alt="Icon forecast" />
 					<p className="first-letter:capitalize text-2xl">{description}</p>
 				</div>
-				<div className="text-center pr-8 border-r-2 ">
+				<div className="text-center pr-8  border-b-2 md:border-b-0 md:border-r-2 ">
 					<label className="relative inline-flex items-center cursor-pointer">
 						<input type="checkbox" value="" className="sr-only peer" />
 						<div onClick={() => setViewCelsius(prev => !prev)}
